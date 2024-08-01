@@ -1,12 +1,988 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang='en'>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Flask App</title>
-</head>
-<body>
-    <h1>Welcome to my Flask App!</h1>
-    <p>This is a simple HTML page served with Flask.</p>
+<meta charset='utf-8'>
+<meta content='IE=Edge,chrome=1' http-equiv='X-UA-Compatible'>
+<meta content='width=device-width,height=device-height,user-scalable=no,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0' name='viewport'>
+<meta content='yes' name='mobile-web-app-capable'>
+<meta content='yes' name='apple-mobile-web-app-capable'>
+<meta content='translucent-black' name='apple-mobile-web-app-status-bar-style'>
+<meta content='Intranet 42' name='apple-mobile-web-app-title'>
+<meta content='on' http-equiv='cleartype'>
+<link href='https://cdn.intra.42.fr/' rel='preconnect'>
+<link href='https://shop.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png' rel='icon' type='image/png'>
+<link href='https://shop.intra.42.fr/assets/42_logo_black-684989d43d629b3c0ff6fd7e1157ee04db9bb7a73fba8ec4e01543d650a1c607.png' rel='shortcut icon' type='image/png'>
+<title>Intra Shop Products</title>
+<meta name="csrf-param" content="authenticity_token" />
+<meta name="csrf-token" content="t9ekTQbxYLuvWBqBr8TDBzal1rdLmZiBwMonwmdqRorYYR1L6B8pm+BPJMIl1gXQIIt0NnVnisH1v1jCMu+ciw==" />
+<link rel="stylesheet" media="all" href="style.css" />
+<link rel="stylesheet" media="screen" href="https://use.typekit.net/bzd7hlb.css" />
+<style>
+  .deprecated {
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%); }
+</style>
+<script>
+  (function() {
+    this._user = {
+      "login": "rcreuzea",
+      "id": 194073,
+      "url": "https://profile.intra.42.fr/users/rcreuzea"
+    };
+  
+    this._consumer_address = 'wss://profile.intra.42.fr/cable';
+  
+  }).call(this);
+</script>
+<script>
+  (function() {
+    this._environment = "production";
+  
+    this._git_commit = "";
+  
+    this._release = this._git_commit;
+  
+  }).call(this);
+</script>
+
+<body class=' '>
+<div class='notifications-flash-top-bar'>
+
+</div>
+<script>
+  (function() {
+    this._notifCount = 0;
+  
+    this._flashes = [];
+  
+  }).call(this);
+</script>
+
+<div class='notifications-container hidden-xs' data-flashes-url='https://profile.intra.42.fr/flashes' data-notifications-url='https://profile.intra.42.fr/notifications'></div>
+
+<div class='main-navbar'>
+<div class='main-navbar-left'>
+<div class='main-navbar-logo' data-turbolinks-scaffold>
+<a href="https://profile.intra.42.fr"><img alt="42" src="https://profile.intra.42.fr/assets/42_logo-7dfc9110a5319a308863b96bda33cea995046d1731cebb735e41b16255106c12.svg" />
+</a></div>
+<span class='hidden-sidebars main-menu-trigger lines-button x' data-trigger-menu=''>
+<span class='fal fa-bars'></span>
+</span>
+<a class="search-mobile-button hidden-sidebars fal fa-search" href="https://profile.intra.42.fr/searches"></a>
+<form action='https://profile.intra.42.fr/searches/search' class='main-navbar-search hidden-xs' data-project-url='https://projects.intra.42.fr/' data-user-url='https://profile.intra.42.fr/users/' method='get'>
+<input autocomplete='off' autofocus class='search-input' name='query' placeholder='search...'>
+</form>
+</div>
+<div class='main-navbar-user-nav' data-turbolinks-scaffold>
+<div class='user-actions hidden-xs'>
+<a class="user-action labelable" data-notification-drop="" href="#"><span class='fal fa-bell'></span>
+<span class='user-action-count labeled' data-counter-count='0'>0</span>
+</a></div>
+<span class='dropdown'>
+<a data-toggle='dropdown' href='#'>
+<span data-login='rcreuzea'>
+rcreuzea
+</span>
+<div class='user-profile-picture visible-sidebars' style='background-image: url(https://cdn.intra.42.fr/users/403377d9ba766284c109545623795a10/rcreuzea.jpg)'></div>
+</a>
+<ul aria-labelledby='User menu' class='dropdown-menu' role='menu'>
+<li>
+<a href="https://profile.intra.42.fr/users/rcreuzea/edit">Settings</a>
+</li>
+<li>
+<a rel="nofollow" data-method="delete" href="https://signin.intra.42.fr/users/sign_out"><span class='iconf-power-off'></span>
+<b>Logout</b>
+</a></li>
+</ul>
+</span>
+</div>
+</div>
+
+<div class='page'>
+<div class='left-sidebar-fix with-main-menu'></div>
+<div class='page-sidebar left-main-container page-sidebar-fixed-left under-main-navbar'><ul class='main-left-navbar'>
+<div class='_'>
+<li>
+<a class="inactive" href="https://profile.intra.42.fr"><span class='icon-user-2'></span>
+<span class='visible-overlay'>
+Profile
+</span>
+</a></li>
+<li>
+<a class="inactive" href="https://projects.intra.42.fr"><span class='icon-network-2-1'></span>
+<span class='visible-overlay'>
+Projets
+</span>
+</a></li>
+<li>
+<a class="inactive" href="https://elearning.intra.42.fr"><span class='icon-movie-play-1'></span>
+<span class='visible-overlay'>
+E-learning
+</span>
+</a></li>
+<li>
+<a class="inactive" href="https://stackoverflowteams.com/c/42network"><span class='icon-bubble-conversation-5'></span>
+<span class='visible-overlay'>
+Forum
+</span>
+</a></li>
+<li>
+<a class="inactive" href="https://companies.intra.42.fr"><span class='icon-briefcase'></span>
+<span class='visible-overlay'>
+Companies
+</span>
+</a></li>
+<li>
+<a class="inactive" href="https://meta.intra.42.fr"><span class='icon-compass-2'></span>
+<span class='visible-overlay'>
+Meta
+</span>
+</a></li>
+<li>
+<a class="active" href="https://shop.intra.42.fr"><span class='icon-shopping-1'></span>
+<span class='visible-overlay'>
+Shop
+</span>
+</a></li>
+</div>
+<div class='admin-links'>
+</div>
+</ul><div class='app-sidebar-left shop-sidebar'>
+<div class='shop-wallet'>
+<span class='icon-piggy-bank'></span>
+<span class='wallet'>
+Wallet
+0 ₳
+</span>
+</div>
+<div class='shop-nav-title'>
+Categories
+</div>
+<li class='shop-sidebar-item'>
+<a data-available-filter="true" href="/?available=true">Available Products</a>
+</li>
+<li class='shop-sidebar-item'>
+<a href="/products">All</a>
+</li>
+<li class='shop-sidebar-item'>
+<a data-category-id="1" href="/?category=1">Services</a>
+</li>
+<li class='shop-sidebar-item'>
+<a data-category-id="4" href="/?category=4">Bocal</a>
+</li>
+<li class='shop-sidebar-item'>
+<a data-category-id="12" href="/?category=12">Items</a>
+</li>
+<li class='shop-sidebar-item'>
+<a data-category-id="23" href="/?category=23">Entertainment</a>
+</li>
+<li class='shop-sidebar-item'>
+<a data-category-id="24" href="/?category=24">Campus</a>
+</li>
+<div class='shop-manage'>
+<div class='shop-nav-title'>
+<li class='shop-sidebar-item'>
+<a href="/orders">Orders</a>
+</li>
+</div>
+</div>
+</div></div>
+<div class='page-content' data-turbolinks-scaffold>
+<div class='row'>
+<div class='main-top-menu'>
+
+</div>
+<div class='full-width shop-list'>
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='1'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Activate your LVM session
+</div>
+<div class='shop-item--bottom-description'>
+Services &gt; LVM Activator
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/1131/Screenshot_2023-12-14_at_16.00.58_1_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>LVM Activator</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+1 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-1131' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>LVM Activator</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/lvm-activator/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="Od1SbbLv9cgbPodKNXmvYE9cHTDyjNPKb4lhWgCHBhNWa+trXAG86FQpuQm/a2m3WXK/scxywYpa/B5aVQLcEg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 1 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='1'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+TIG yourself or because you forgot to lock your session 🙄
+</div>
+<div class='shop-item--bottom-description'>
+Services &gt; T.I.G.
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/573/hide-the-pain-harold-meme.png'); "></div>
+<div class='shop-item--body'>
+<span class='name'>T.I.G.</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+1 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-573' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>T.I.G.</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/t-i-g/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="PqHdBL/UpjmmLJP3zP6TfYZfmc8XovV/jBnZfqDr1upRF2QCUTrvGek7rbRG7FWqkHE7Tilc5z+5bKZ+9W4M6w==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 1 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='24'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Reset your $HOME and delete all files. You will keep your current volume capacity but reduce usage to 1.2 GiB. You will be logged out and will receive a Slack confirmation once it's done.
+</div>
+<div class='shop-item--bottom-description'>
+Campus &gt; touch ~/.hard-reset
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/1376/Screenshot_2024-05-31_at_09.04.12.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>touch ~/.hard-reset</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+5 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-1376' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>touch ~/.hard-reset</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/touch-hard-reset/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="2MYRus7Ul/FK1CNXjBnG4NbK9hKdrj+SV+AzgXMKXaW3cKi8IDre0QXDHRQGCwA3wORUk6NQLdJilUyBJo+HpA==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 5 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+On écoule notre stock de porte badge pour une nouvelle commande.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Porte badge
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/847/PXL_20230203_152953061_1_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Porte badge</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+15 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-847' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Porte badge</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You will be able to offer this product to someone else.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/porte-badge/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="5cSPKK+2LpmVs9JR5lrSePhlwEJjK0sefQqhu1AAHnOKcjYuQVhnudqk7BJsSBSv7ktiw13VWV5If967BYXEcg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 15 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='1'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Diffuse tes créations sur les écrans du campus. Tu seras contacté par KMbØt sur slack pour envoyer ton image puis, après validation du staff/tuteurs, elle sera diffusée pendant 4h sur le poste, la rangée, le cluster de ton choix ou sur l'ensemble du campus.
+</div>
+<div class='shop-item--bottom-description'>
+Services &gt; пропаганда
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/820/00-00-CHA_2_2_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>пропаганда</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+21 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-820' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>пропаганда</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/1729ed35-0a18-4945-89da-d66720c872d7/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="r7sBh5cbzAiY84Ghh7XZUn5GfOR48SWgVYUgDHnyAR/ADbiBefWFKNfkv+INpx+FaGjeZUYPN+Bg8F8MLHfbHg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 21 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Il se compose de 70 feuilles A5 lignées en papier recyclé et s'accompagne d'un stylo.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Carnet spirale
+<br>
+<span class=''>
+17 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/781/Nouveau_projet_5_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Carnet spirale</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+30 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-781' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Carnet spirale</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/carnet-spirale/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="dI7OQDCxjQTVrlt9hIEDMZQi/zRts0Xy/nFmOkQUkiQbOHdG3l/EJJq5ZT4Ok8XmggxdtVNNV7LLBBk6EZFIJQ==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 30 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+96 feuilles lignées (soit 160 pages) de 80 g/m² en papier recyclé.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Carnet en liège
+<br>
+<span class=''>
+21 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/782/Nouveau_projet_6_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Carnet en liège</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+30 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-782' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Carnet en liège</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/carnet-en-liege/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="M+80+JG0/j2PFSCGKsTZHIXy1LGvcq99/j3evLEv+MpcWY3+f1q3HcACHsWg1h/Lk9x2MJGMvT3LSKG85Koiyw==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 30 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='false' data-product-category='12'>
+<div class='shop-item'>
+<div class='no-stock shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+5 connecteurs : entrée USB C, USB A, sortie type C, sortie iOS (Ligthning) et sortie micro USB. Le câble de charge mesure 120 cm.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Câble de charge
+<br>
+<span class='text-danger'>
+Not enough stock.
+</span>
+<br>
+<span class='text-danger'>
+0 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/779/Nouveau_projet.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Câble de charge</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-danger' disabled='disabled'>
+30 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Double tes chances de ne pas oublier ton badge ! Ce deuxième badge te permet de rentrer/sortir de l'école en plus de ton badge carte.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Badge porte-clé
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/784/Nouveau_projet_9_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Badge porte-clé</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+42 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-784' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Badge porte-clé</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/badge-porte-cle/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="97z4QZXQ7zNUckDqYBiP4NrKc4Auhz90io7MT76C4+mYCkFHez6mExtlfqnqCkk3zOTRARB5LTS/+7NP6wc56A==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 42 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Son contenant en verre borosilicate, adapté au contact alimentaire et résistant aux températures, et son couvercle en bambou font de cette boîte repas à l'esprit nature un indispensable de la pause méridienne à 42 Mulhouse Grand-Est KMØ Campus 33ème du 42 Network.
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Lunch box
+<br>
+<span class=''>
+19 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/777/Nouveau_projet_1_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Lunch box</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+100 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-777' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Lunch box</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/lunch-box/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="cVe+sRDSn1O04zvK989+Xj0yCMkKR+8SF8hXGQAlc9oe4Qe3/jzWc/v0BYl93biJKxyqSDS5/VIivSgZVaCp2w==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 100 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Bouteille isotherme en acier inoxydable Impact 500 mL
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Bouteille
+<br>
+<span class=''>
+3 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/778/Nouveau_projet_2_.png'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Bouteille</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+100 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-778' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Bouteille</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/bouteille/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="ZSDY509hTr6JHNY6OoP9KCjB2btf8XczNn0vXGDnhRsKlmHhoY8HnsYL6HmwkTv/Pu97OmEPZXMDCFBcNWJfGg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 100 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='12'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Chargeur à induction 5W en bambou Rundo
+</div>
+<div class='shop-item--bottom-description'>
+Items &gt; Chargeur à induction
+<br>
+<span class=''>
+17 items left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/780/Nouveau_projet_4_.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Chargeur à induction</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+100 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-780' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Chargeur à induction</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/chargeur-a-induction/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uI9WkRqthsvT8e2ljEeszuELsyiiNNFIHzmvH68icVPXOe+X9EPP65zm0+YGVWoZ9yURqZzKwwgqTNAf+qerUg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 100 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='1'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Upgrade the storage of your $HOME and get more space ! Buy much as you want but don't overload our server 💥 Your data will NOT be deleted. You will be logged out and will receive a Slack confirmation when it's done.
+</div>
+<div class='shop-item--bottom-description'>
+Services &gt; Bigger, Faster, Stronger - 1Gb upgrade
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/34/ihs-isuppli-thailand-floods-hard-drives.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Bigger, Faster, Stronger - 1Gb upgrade</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+100 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-34' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Bigger, Faster, Stronger - 1Gb upgrade</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/bigger-faster-stronger-1gb-upgrade/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="KG0IKMDG7no7Z/A+ShdBUJ+SUEoHje0IKbLw6WHJ/J5H27EuLiinWnRwzn3ABYeHibzyyzlz/0gcx4/pNEwmnw==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 100 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='23'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Se faire inviter par le bocal au Nomad/Pantographe pour discuter autour d'une tasse de thé, trinquer un verre ou siroter un jus de tomate 🍹
+</div>
+<div class='shop-item--bottom-description'>
+Entertainment &gt; Tea time
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/783/5ccd0aff230000c40098364b.jpeg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Tea time</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+250 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-783' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Tea time</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/tea-time/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="uPdEMNQazIDuqzvtrsgTypU3i5GAXg6HCU6DCvh7K4HXQf02OvSFoKG8Ba4k2tUdgxkpEL6gHMc8O/wKrf7xgA==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 250 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='23'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Se faire inviter par le bocal pour déjeuner un plat du jour au Pantographe ou partager des tapas au Nomad 😋
+</div>
+<div class='shop-item--bottom-description'>
+Entertainment &gt; Lunch time
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/829/165069.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'>Lunch time</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+1000 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-829' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'>Lunch time</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You won't be able to offer this product to someone else. It will be instantly given to you.
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/lunch-time/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="zbKkXREaokkbJ7u0GcMeziFEOk4exWQPAMyzLhd/92KiBB1b//TraVQwhfeT0dgZN2qYzyA7dk81ucwuQvotYw==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 1000 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+<div class='col-lg-3 col-sm-6 col-xs-12' data-available='true' data-product-category='4'>
+<div class='shop-item'>
+<div class='shop-item--overlay'>
+<div class='shop-item--description'>
+<div class='shop-item--top-description'>
+Vous en rêviez ? Nous vous proposons cet objet collector pour la somme modique de 424242 dollars altarians.
+
+(Photo non contractuel)
+</div>
+<div class='shop-item--bottom-description'>
+Bocal &gt;  iMac Collector 27 pouces Late 2015
+<br>
+<span class=''>
+1 item left
+</span>
+</div>
+</div>
+</div>
+<div class='shop-item--image' style="background-image: url('https://cdn.intra.42.fr/product/image/785/imac.jpg'); "></div>
+<div class='shop-item--body'>
+<span class='name'> iMac Collector 27 pouces Late 2015</span>
+<div class='pull-right'>
+<div class='btn btn-xs btn-warning' disabled='disabled'>
+424242 ₳
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class='modal modal-v2 fade' id='buy-modal-785' role='dialog' tabindex='1'>
+<div class='modal-dialog'>
+<div class='modal-header'>
+<h3 class='m-0 text-white'> iMac Collector 27 pouces Late 2015</h3>
+</div>
+<div class='modal-content'>
+<p class='help-block text-center'>
+You will be able to offer this product to someone else. Owner will have to validate this purchase with the ADM.
+</p>
+<p>
+<b>
+You can only use one instance of this item
+</b>
+</p>
+<form novalidate="novalidate" class="simple_form form-horizontal product" action="/products/imac-collector-27-pouces-late-2015/buy" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="&#x2713;" /><input type="hidden" name="authenticity_token" value="AMKyVyhkEvm+mdnfETMwlg3tFNNmH2ffMAhboDwiyxtvdAtRxopb2fGO55ybIfZBG8O2UljhdZ8FfSSgaacRGg==" /><table class='table table-responsive'>
+<tobody>
+</tobody>
+</table>
+<div class='modal-footer'>
+<button class='btn btn-lg btn-primary' data-disable-with='Submiting...'>Buy 424242 ₳</button>
+</div>
+</form>
+</div>
+</div>
+</div>
+
+</div>
+
+<footer class="legal-mentions text-center text-muted my-4 col-sm-12 flex justify-content-center flex-column flex-sm-row"><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/2">Declaration on the use of cookies</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/5">Privacy policy</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/6">General term of use of the site</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/4">Rules of procedure</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/1">Terms of use for video surveillance</a><a class="text-muted small px-4" href="https://profile.intra.42.fr/legal/terms/3">Legal notices</a></footer>
+</div>
+</div>
+</div>
+<div aria-hidden='true' aria-labelledby='smartModalLabel' class='modal fade' id='smartModal' role='dialog' tabindex='-1'>
+<div class='modal-dialog'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-hidden='true' class='close' data-dismiss='modal' type='button'>
+x
+</button>
+<h3 id='smartModalLabel'>
+
+</h3>
+</div>
+<div class='modal-body'>
+<h4 class='note-title'></h4>
+</div>
+<div class='modal-footer'>
+<button aria-hidden='true' class='btn' data-dismiss='modal'>Cancel</button>
+<button class='send btn btn-primary'>Send</button>
+</div>
+</div>
+</div>
+</div>
+<div aria-hidden='true' aria-labelledby='flashModalLabel' class='modal fade' id='flashModal' role='dialog' tabindex='-1'>
+<div class='modal-dialog modal-lg'>
+<div class='modal-content'>
+<div class='modal-header'>
+<button aria-hidden='true' class='close' data-dismiss='modal' type='button'>
+x
+</button>
+<h3 id='flashModalLabel'></h3>
+</div>
+<div class='modal-body'>
+<h4 class='note-title'>Flash modal content (raw)</h4>
+</div>
+<div class='modal-footer'>
+<button aria-hidden='true' class='btn btn-block btn-default' data-dismiss='modal'>Close</button>
+</div>
+</div>
+</div>
+</div>
+
+<div data-cache="true" class="hide"></div>
 </body>
+<script async await src='https://www.googletagmanager.com/gtag/js?id=G-BJ34XNRJCV'></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  
+  gtag('config', 'G-BJ34XNRJCV');
+</script>
+
+<script>
+  var jsClasses = ["new_message", "topic-reply"];
+  jsClasses.forEach(function(className) {
+    Array.prototype.forEach.call(document.getElementsByClassName(className), function (e) {
+      e.classList.add("js-hidden");
+    });
+  });
+</script>
+<script src="/assets/application-b591c27ac220b50766747e7bfa3bb69cd749756d202e4b92011823c19eb70a7e.js"></script>
+
+</head>
 </html>
+

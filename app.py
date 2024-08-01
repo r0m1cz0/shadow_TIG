@@ -1,7 +1,9 @@
 import webview
 import platform
+import time
+import threading
 from Xlib import display, X
-from Xlib.ext import randr
+import subprocess
 
 # Chemin vers le fichier HTML
 html_file = 'static/index.html'
@@ -26,9 +28,19 @@ def disable_close(window):
         # Flush the display to make sure the changes take effect
         d.flush()
 
+def show_popup():
+    time.sleep(15)  # Attendre 5 secondes
+    if platform.system() == 'Darwin':  # macOS
+        subprocess.run(['osascript', '-e', 'display notification "Vous avez x heure de TIG (force à toi mon reuf on est pas ensemble)" with title "Notification"'])
+    else:
+        print("Notification: Vous avez x heure de TIG (force à toi mon reuf on est pas ensemble)")
+
 if __name__ == '__main__':
     # Créer la fenêtre
     window = webview.create_window('My Webview App', html_file, fullscreen=True)
+
+    # Démarrer le thread pour afficher la pop-up après 5 secondes
+    threading.Thread(target=show_popup).start()
 
     # Démarrer l'application avec la fonction de blocage
     webview.start(func=disable_close, args=(window,))
